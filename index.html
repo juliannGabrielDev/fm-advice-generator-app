@@ -7,15 +7,24 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./src/output.css">
 </head>
-<body>
+<body class="flex flex-col items-center justify-center h-screen p-4 text-center text-[hsl(193,38%,86%)] bg-[hsl(218,23%,16%)]">
+  <div class="relative grid gap-4 w-[min(100%,500px)] mx-auto px-6 py-10 bg-[hsl(217,19%,24%)] rounded-lg">
+    <span class="text-emerald-300 font-semibold uppercase">Advice #<span class="">117<!-- Advice ID goes here --></span>
+    </span>
+    <p class="text-[1.75rem] font-bold">
+      <!-- Advice text goes here -->
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. At ad ipsa sint fuga numquam dolor.
+    </p>
+    <img class="block sm:hidden mx-auto my-4" src="./images/pattern-divider-mobile.svg" alt="Divider">
+    <img class="hidden sm:block mx-auto my-4" src="./images/pattern-divider-desktop.svg" alt="Divider">
+    <button class="absolute -bottom-7 block left-1/2 rounded-full p-4 bg-emerald-300 -translate-x-1/2 cursor-pointer hover:shadow-[0_0_20px_5px_#34d399] shadow-emerald-200 transition-shadow duration-300">
+      <img class="" src="./images/icon-dice.svg" alt="Dice icon">
+    </button>
+  </div>
 
-  Advice #<!-- Advice ID goes here -->
-
-  "<!-- Advice text goes here -->"
-
-  <div>
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="absolute bottom-5">
+    Challenge by <a class="underline text-emerald-300" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a class="underline text-emerald-300" href="#">Julián Gabriel</a>.
   </div>
 </body>
 </html>
