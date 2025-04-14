@@ -1,10 +1,12 @@
-function App() {
+import Layout from "./components/Layout";
+import Card from "./components/Card";
 
-  return (
-    <>
-      
-    </>
-  )
+function App() {
+	return (
+		<Layout>
+				<Card />
+		</Layout>
+	);
 }
 
-export default App
+export default App;
