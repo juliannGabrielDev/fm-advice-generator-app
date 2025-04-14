@@ -1,4 +1,4 @@
-import { FC, JSX, useEffect, useState } from "react";
+import { FC, JSX, useEffect, useState, useCallback, useMemo } from "react";
 import Quote from "./Quote"
 import Button from "./Button";
 
@@ -19,7 +19,7 @@ const Card: FC = (): JSX.Element => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<Error | null>(null);
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         try {
             setError(null);
             const response = await fetch("https://api.adviceslip.com/advice");
@@ -33,16 +33,16 @@ const Card: FC = (): JSX.Element => {
         } finally {
             setLoading(false);
         }
-    }
+    }, []);
 
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [fetchData]);
 
-    const classes = {
+    const classes = useMemo(() => ({
         main: "relative flex flex-col justify-between gap-4 bg-blue-9 p-8 pb-12 rounded-lg w-full max-w-md min-h-52",
         advice: "block text-center text-green-3 font-semibold",
-    };
+    }), []);
 
 	return (
 		<main className={classes.main}>
